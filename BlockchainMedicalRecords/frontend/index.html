@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockchain Medical Records</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>Blockchain Medical Records</h1>
+        <p>Secure medical record hash & access management demo</p>
+    </header>
+
+    <section class="card">
+        <h2>1. Wallet</h2>
+        <button id="connectBtn">Connect MetaMask</button>
+        <p id="walletStatus">Wallet not connected</p>
+        <p id="networkStatus"></p>
+    </section>
+
+    <section class="card">
+        <h2>2. Add Medical Record</h2>
+        <label>Record Type</label>
+        <input id="recordType" placeholder="Blood Test / X-Ray / Prescription">
+
+        <label>Record Hash</label>
+        <input id="recordHash" placeholder="SHA-256 hash or demo hash">
+
+        <input type="file" id="fileInput">
+        <small>Selecting a file calculates its SHA-256 hash locally.</small>
+
+        <button id="addBtn">Add Record to Blockchain</button>
+        <pre id="addResult"></pre>
+    </section>
+
+    <section class="card">
+        <h2>3. View Record</h2>
+        <input id="recordId" type="number" min="1" placeholder="Record ID">
+        <button id="viewBtn">View Record</button>
+        <pre id="recordResult"></pre>
+    </section>
+
+    <section class="card">
+        <h2>4. Doctor Access</h2>
+        <input id="doctorAddress" placeholder="Doctor wallet address">
+
+        <div class="row">
+            <button id="grantBtn">Grant Access</button>
+            <button id="revokeBtn" class="danger">Revoke Access</button>
+        </div>
+
+        <pre id="accessResult"></pre>
+    </section>
+
+    <section class="card">
+        <h2>5. Check Access</h2>
+        <input id="patientAddress" placeholder="Patient wallet address">
+        <input id="checkDoctorAddress" placeholder="Doctor wallet address">
+        <button id="checkBtn">Check Permission</button>
+        <pre id="checkResult"></pre>
+    </section>
+
+    <footer>
+        Educational mini-project. Do not use real patient data or real private keys.
+    </footer>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/ethers@6.13.5/dist/ethers.umd.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

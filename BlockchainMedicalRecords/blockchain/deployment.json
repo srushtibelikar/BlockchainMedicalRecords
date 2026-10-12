@@ -1,0 +1,5 @@
+{
+  "contractAddress": "0x3094F6eaE96310acEa1a2344FCdCD1d6675Dfb1a",
+  "network": "ganache",
+  "rpcUrl": "http://127.0.0.1:7545"
+}
